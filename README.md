@@ -12,7 +12,7 @@ SwiftUI generic items browser: grid/list toggle, edit & delete, thumbnail loader
 
 ### Xcode
 - File → Add Packages…
-- URL: `https://github.com/<your-account>/ItemsBrowserKit.git`
+- URL: `https://github.com/ThinkSwift/ItemsBrowserKit.git`
 - Add `ItemsBrowserKit` to your target.
 
 ### Package.swift
