@@ -1,28 +1,35 @@
 # ItemsBrowserKit
 
-SwiftUI generic items browser: grid/list toggle, edit & delete, thumbnail loader with async, and simple sorting by `updatedAt`.
+A lightweight, generic SwiftUI browser for your items — grid/list toggle, multi-select delete, async thumbnails, and simple updated-time sorting.
 
 - **iOS 15+**
 - **No external dependencies**
-- **Generic over your model** via `BrowserItem` protocol
+- **Bring-your-own model** via `BrowserItem`
 
 ---
 
-## Installation (Swift Package Manager)
+## Installation
 
-### Xcode
-- File → Add Packages…
-- URL: `https://github.com/ThinkSwift/ItemsBrowserKit.git`
-- Add `ItemsBrowserKit` to your target.
+**Xcode** → **File** → **Add Packages…**  
+Paste this repository URL: `https://github.com/<your-username>/ItemsBrowserKit.git`  
+(Replace `<your-username>` with your GitHub account or org.)
 
-### Package.swift
+---
+
+## Quick Start
+
+### 1) Conform your model
+
 ```swift
-dependencies: [
-    .package(url: "https://github.com/<your-account>/ItemsBrowserKit.git", from: "0.1.0")
-],
-targets: [
-    .target(
-        name: "YourApp",
-        dependencies: ["ItemsBrowserKit"]
-    )
-]
+import SwiftUI
+import ItemsBrowserKit
+
+struct Doc: BrowserItem {
+    var anyID: AnyHashable
+    var title: String?
+    var subtitle: String?
+    var createdAt: Date
+    var updatedAt: Date
+    var thumbnail: Image?
+    var loadThumbnail: (() async -> Image?)?
+}
