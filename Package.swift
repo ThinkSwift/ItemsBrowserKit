@@ -1,10 +1,13 @@
-// swift-tools-version: 5.9
 import PackageDescription
 
 let package = Package(
     name: "ItemsBrowserKit",
     platforms: [
-        .iOS(.v15)
+        .iOS(.v17),
+        .macOS(.v14),
+        .tvOS(.v17),
+        .watchOS(.v10),
+        .visionOS(.v1)
     ],
     products: [
         .library(name: "ItemsBrowserKit", targets: ["ItemsBrowserKit"])
@@ -13,6 +16,11 @@ let package = Package(
         .target(
             name: "ItemsBrowserKit",
             path: "Sources/ItemsBrowserKit"
+        ),
+        .testTarget(
+            name: "ItemsBrowserKitTests",
+            dependencies: ["ItemsBrowserKit"]
         )
     ]
 )
+
