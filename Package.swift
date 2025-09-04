@@ -5,7 +5,7 @@ let package = Package(
     name: "ItemsBrowserKit",
     platforms: [
         .iOS(.v15),
-        .macOS(.v14)   
+        .macOS(.v14)
     ],
     products: [
         .library(name: "ItemsBrowserKit", targets: ["ItemsBrowserKit"])
@@ -17,4 +17,5 @@ let package = Package(
         )
     ]
 )
+
 
